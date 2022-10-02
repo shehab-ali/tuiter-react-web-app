@@ -1,0 +1,100 @@
+
+
+body {
+    background-color: black;
+}
+
+.search-gear-box-margin {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 16px;
+    margin-right: 12px;
+}
+.search-field {
+    color: white;
+    background-color: darkgray;
+    padding-left: 30px;
+    border-radius: 30px;
+    width: 90%;
+    border-width: 0;
+    float: left;
+
+}
+.search-gear-box-margin .wd-gear {
+    content: "\2699";
+    font-size: 28px;
+    color: rgb(29, 161, 242);
+    text-decoration: none;
+    float:right;
+}
+.gearbox-span {
+    content: "\2699";
+}
+.search-gear-box-margin label {
+    display: none;
+}
+.navigation-tabs {
+    width: 100%;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+.navigation-tabs li {
+    display: inline-block;
+    padding: 16px;
+    list-style-type: none;
+}
+.navigation-tabs a {
+    color: rgb(110, 118, 125);
+    text-decoration: none;
+}
+.selected-icon {
+    padding-bottom: 12px;
+    border-bottom: solid rgb(29, 161, 242) 4px;
+    color: rgb(29, 161, 242);
+}
+.wd-post-topic {
+    color: rgb(110, 118, 125);
+    font-size: 13px;
+    padding-bottom: 6px;
+}
+.post-topic-color{
+    color: lightgray;
+    font-size: 13px;
+    padding-bottom: 6px;
+}
+.post-title {
+    font-size: 18px;
+    padding-bottom: 6px;
+}
+.post-number-tuits {
+    font-size: 13px;
+    color: rgb(110, 118, 125);
+    padding-bottom: 12px;
+}
+.post-author-name-wd {
+    font-size: 13px;
+    color: white;
+    padding-bottom: 6px;
+}
+.post-image-width {
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+}
+.post-image-width img {
+    width: 100%;
+    height: auto;
+}
+.post-float-left {
+    float: left;
+    width: 70%;
+}
+.post-float-right{
+    float: right;
+    margin-right: 16px;
+    padding-bottom: 12px;
+}
+.wd-last-post{
+    border-bottom-style: solid;
+}
