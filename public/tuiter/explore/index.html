@@ -1,123 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
-    <link href="../styles.css" rel="stylesheet" />
-    <link href="index.css" rel="stylesheet" />
+  <link href="../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../../vendors/bootswatch/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../../vendors/fontawesome/css/all.css" rel="stylesheet"/>
+  <link href="index.css"
+        rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+          integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+          crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <title>Explore screen</title>
 </head>
 <body>
-
-    <a href="../navigation.html"> back </a>
-
-    <!-- Navigation field -->
-    <div class="navigation-border">
-        <div class="search-gear-box-margin">
-            <label for="search-tuiter"></label>
-            <input id="search-tuiter" class="search-field" placeholder="Search Twitter" />
-            <a href="explore-settings.html" class="wd-gear gearbox-span">
-                <span> 
-                    &#9881 
-                </span></a>
-        </div>
-        <div class="float-clear"></div>
-
-        <div>
-            <ul class="navigation-tabs">
-                <li>
-                    <a href=""><span class="selected-icon"> For you </span></a>
-                </li>
-                <li>
-                    <a href=""> Trending </a>
-                </li>
-                <li>
-                    <a href=""> COVID-19 </a>
-                </li>
-                <li>
-                    <a href=""> News </a>
-                </li>
-                <li>
-                    <a href=""> Sports </a>
-                </li>
-                <li>
-                    <a href=""> Entertainment </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="navigation-border"></div>
-
-    <div class="navigation-border">
-        <div class="margin-left wd-post-topic"> Trending in Science </div>
-        <div class="margin-left post-title"> Starship </div>
-        <div class="margin-left post-number-tuits"> 55.5K Tuits </div>
-    </div>
-
-    <div class="navigation-border">
-        <div class="wd-post-topic margin-left"> Sports Trending </div>
-        <div class="post-title margin-left"> Joe Rogan </div>
-        <div class="post-number-tuits margin-left"> 5,218 Tuits </div>
-    </div>
-
-    <div class="navigation-border">
-        <div class="post-float-left">
-            <div><span class="post-author-name-wd margin-left"> The New York Times </span>
-                <span class="wd-post-topic"> &#183 Yesterday </span></div>
-            <div class="post-title margin-left"> Some Title That Sounds Impressive </div>
-        </div>
-        <div class="post-float-right">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQSXi7_pqz9RdAYdjNu33Xc47hwTr0SHfeYyoZs6PlDiZL0pFE" class="post-image-width" alt="Post Image"/>
-        </div>
-        <div class="float-clear"></div>
-    </div>
-
-    <div class="navigation-border">
-        <div class="post-float-left">
-            <div><span class="post-author-name-wd margin-left"> Bloomberg Opinion </span>
-                <span class="wd-post-topic"> &#183 Yesterday </span></div>
-            <div class="post-title margin-left"> Thinking About Getting A Booster </div>
-        </div>
-        <div class="post-float-right">
-            <img src="data:image/jpeg;base64,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" class="post-image-width" alt="Post Image"/>
-        </div>
-        <div class="float-clear"></div>
-    </div>
-
-    <div class="navigation-border">
-        <div class="post-float-left">
-            <div><span class="post-topic-color margin-left"> COVID-19 </span>
-                <span class="wd-post-topic"> &#183 Live </span></div>
-            <div class="post-title margin-left"> Meet The Woo 2.
-                 
-            </div>
-        </div>
-        <div class="post-float-right">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6sF0ei-ZR8mrPsYR5yVNOhLkhf5BI7psZdw&usqp=CAU" class="post-image-width" alt="Post Image"/>
-        </div>
-        <div class="float-clear"></div>
-    </div>
-
-    <div class="navigation-border">
-        <div class="post-float-left">
-            <div><span class="post-topic-color margin-left"> Entertainment </span>
-                <span class="wd-post-topic"> &#183 Live </span></div>
-            <div class="margin-left post-title"> The Legend Lives On: A Documentary About Pop. </div>
-        </div>
-        <div class="post-float-right">
-            <div class="post-image-width">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQSXi7_pqz9RdAYdjNu33Xc47hwTr0SHfeYyoZs6PlDiZL0pFE" alt="Post Image"/>
-            </div>
-        </div>
-        <div class="float-clear"></div>
-    </div>
-
-    <div class="navigation-border">
-        <div class="margin-left wd-post-topic"> Trending in United States. </div>
-        <div class="margin-left post-title margin-left"> She Like The Way That I Dance. </div>
-        <div class="margin-left post-number-tuits"> 1,259 Tuits </div>
-    </div>
-
+  <div class="container" id="wd-explore"></div>
+  <script src="index.js" type="module"></script>
 </body>
 </html>

@@ -29,28 +29,28 @@ const NavigationSidebar = () => {
       <li class="list-group-item list-group-item-action">
         <i class="fas fa-envelope">
         </i>
-        <span class="d-none d-xxl-inline d-xl-inline">
+        <span class="d-none d-xl-inline d-xxl-inline">
           Messages
         </span>
       </li>
       <li class="list-group-item list-group-item-action">
         <i class="fas fa-bookmark">
         </i>
-        <span class="d-none d-xxl-inline d-xl-inline">
+        <span class="d-none d-xl-inline d-xxl-inline">
           Bookmarks
         </span>
       </li>
       <li class="list-group-item list-group-item-action">
         <i class="fas fa-list">
         </i>
-        <span class="d-none d-xxl-inline d-xl-inline">
+        <span class="d-none d-xl-inline d-xxl-inline">
           Lists
         </span>
       </li>
       <li class="list-group-item list-group-item-action">
         <i class="fas fa-user">
         </i>
-        <span class="d-none d-xxl-inline d-xl-inline">
+        <span class="d-none d-xl-inline d-xxl-inline">
           Profile
         </span>
       </li>
@@ -58,10 +58,10 @@ const NavigationSidebar = () => {
         <span class="fa-stack wd-override-more">
           <i class="fas fa-circle fa-stack-2x">
           </i>
-          <i class="fas fa-ellipsis-h fa-stack-1x fa-inverse wd-dots">
+          <i class="fas fa-stack-1x fa-inverse fa-ellipsis-h wd-color-dots">
           </i>
         </span>
-        <span class="d-none d-xxl-inline d-xl-inline">
+        <span class="d-none d-xl-inline d-xxl-inline">
           More
         </span>
       </li>

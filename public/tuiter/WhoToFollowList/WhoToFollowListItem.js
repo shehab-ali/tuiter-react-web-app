@@ -4,21 +4,21 @@ const WhoToFollowListItem = (who) => {
       <div class="wd-follow-logo">
         <img src="${who.avatarIcon}" class="wd-follow-logo"/>
       </div>
-      <button class="btn btn-primary wd-override-follow">
+      <button class="btn btn-primary wd-format-follow">
         Follow
       </button>
       <div>
         ${who.userName}
-        <span class="fa-stack wd-override-check">
-          <i class="fas fa-circle fa-stack-2x">
+        <span class="fa-stack wd-verify-check">
+          <i class="fas fa-stack-2x fa-circle">
           </i>
-          <i class="fas fa-check fa-stack-1x wd-check-mark">
+          <i class="fas fa-stack-1x fa-check  wd-check-mark">
           </i>
         </span>
       </div>
       <div>
         @${who.handle}
-      </div class="text-muted fw-normal wd-handle">
+      </div class="fw-normal text-muted wd-handle">
     </li>
   `);
 }

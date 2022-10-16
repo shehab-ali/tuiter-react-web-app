@@ -4,18 +4,18 @@ import links from "./links.js";
 
 const ExploreComponent = () => {
   return(`
-    <i class="fas fa-search wd-override-search-icon">
+    <i class="fas fa-search wd-search-icon-format">
     </i>
-    <input class="wd-override-search" type="text" placeholder="Search Twitter"/>
+    <input class="wd-verify-search" type="text" placeholder= "Search Twitter"/>
     <span class="fa-2x">
       <a href="#">
-         <i class="fas fa-cog text-primary wd-override-gear">
+         <i class="fas fa-cog text-primary wd-gear-icon-format">
          </i>
       </a>
     </span>
-    <ul class="nav nav-tabs wd-navbar">
+    <ul class="nav nav-tabs wd-navigation-bar">
       <li class="nav-item">
-        <a class="nav-link active" href="../for-you.html">For you</a>
+        <a class="nav-link active" href="../for-you.html"> For you </a>
       </li>
       ${
         links.map(link => {
@@ -33,7 +33,7 @@ const ExploreComponent = () => {
     <div class="card">
       <img class="img-fluid wd-spacex-override" src="../../images/spaceship.png">
       <div class="card-img-overlay">
-        <h2 class="fw-bold wd-picture-caption">
+        <h2 class="wd-image-caption">
           SpaceX Starship
         </h2>
       </div>
