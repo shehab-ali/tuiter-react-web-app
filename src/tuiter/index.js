@@ -1,32 +1,47 @@
 import Nav from "../nav";
 import NavigationSidebar from "./navigation-sidebar";
-import WhoToFollowList
-    from "./who-to-follow-list/index";
-import ExploreComponent from "./explore";
-import {Routes, Route} from "react-router";
-import HomeComponent from "./home";
+import WhoToFollowList from "./who-to-follow-list/index.js";
+import ExploreComponent from "./explore/index.js";
+import whoReducer from "./reducers/who-reducer";
+import tuitsReducer from "./tuits/tuits-reducer";
+import homeReducer from "./tuits/home/home-reducer";
+import { configureStore } from '@reduxjs/toolkit';
+import {Provider} from "react-redux";
+import {Route, Routes, useLocation} from "react-router";
+import HomeComponent from "./tuits/home";
+import React from "react";
 
+
+const store = configureStore(
+    {
+      reducer: {who: whoReducer, tuits: tuitsReducer, home: homeReducer}
+  });
 
 function Tuiter() {
-    return (
-        <div>
-            <Nav/>
-            <div className="row mt-2">
-                <div className="col-2 col-md-2 col-lg-1 col-xl-2">
-                    <NavigationSidebar active="home"/>
-                </div>
-                <div className="col-10 col-lg-7 col-xl-6">
-                    <Routes>
-                        <Route path="home"    element={<HomeComponent/>}/>
-                        <Route path="explore" element={<ExploreComponent/>}/>
-                    </Routes>
-                </div>
-                <div className="d-sm-none d-md-none d-lg-block col-lg-4 col-xl-4 ">
-                    <WhoToFollowList/>
-                </div>
-            </div>
-        </div>
+  const { pathname } = useLocation();
+  let activeTab;
+  
+  if (pathname.split("/").length === 3) {
+    activeTab = pathname.split("/")[2];
 
-    )
+  } else {
+    activeTab = 'explore';
+  }
+
+  return (
+      <Provider store={store}>
+        <Nav/>
+        <div className="row mt-2">
+          <NavigationSidebar active={activeTab}/>
+          <Routes>
+            <Route index path="/" element={<ExploreComponent/>}/>
+            <Route path="/home" element={<HomeComponent/>}/>
+            <Route path="/explore" element={<ExploreComponent/>}/>
+          </Routes>
+          <WhoToFollowList/>
+        </div>
+      </Provider>
+  );
 }
+
 export default Tuiter
