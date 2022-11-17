@@ -1,18 +1,18 @@
 import React from "react";
-import PostSummaryItem
-  from "./post-summary-list-item.js";
-import {useSelector} from "react-redux";
+import { useSelector } from "react-redux";
+import PostSummaryItem from "./post-summary-item";
 
 const PostSummaryList = () => {
-  const postsArray = useSelector(state => state.tuits)
-  return(
-      <ul className="list-group">
-        {
-          postsArray.map(post =>
-              <PostSummaryItem
-                  key={post._id} post={post}/> )
-        }
-      </ul>
-  );
-};
+    const {tuits} = useSelector(
+        (state) => state.tuitsData
+    );
+    
+    return (
+        <div className="mt-2 bg-light list-group">
+            {tuits.map(post => <PostSummaryItem key={post._id} post={post} />)}
+        </div>
+    );
+}
+
 export default PostSummaryList;
+

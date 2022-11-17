@@ -1,23 +1,28 @@
-import React from "react";
-import TuitsItem
-  from "./tuits-item.js";
-import {useSelector} from "react-redux";
+import React, { useEffect } from "react";
+import TuitItem from "./tuit-item";
+import { useSelector, useDispatch } from "react-redux";
+import { findTuitsThunk } from "../../services/tuits-thunks";
 
 const TuitsList = () => {
-  const tuits = useSelector(state => state.home)
-  return(
-    <div>
-      <ul className ="list-group">
-        {
-          tuits.map(tuit =>
-            <div>
-              <TuitsItem
-              key={tuit._id} tuit = {tuit}/>
-            </div>
-          )
-        }
-      </ul>
-    </div>
-  );
-};
+    const { tuits, loading } = useSelector(
+        state => state.tuitsData
+    );
+
+    const dispatch = useDispatch();
+
+    //eslint-disable-next-line
+    useEffect(() => { dispatch(findTuitsThunk()) });
+
+    return (
+        <div className="mt-2 bg-light list-group">
+            {
+                !loading &&
+                tuits.map(tuit => <TuitItem key={tuit._id} tuit={tuit} />)
+            }
+        </div>
+    );
+}
+
 export default TuitsList;
+
+

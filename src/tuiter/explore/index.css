@@ -1,0 +1,18 @@
+.wd-pos-search {
+    position: absolute;
+    top: 11px;
+    left: 25px;
+}
+
+.wd-cog {
+    color: rgb(29, 161, 242);
+    font-size: 30px;
+}
+
+.wd-image-text {
+    color: white;
+    position: absolute;
+    left: 5px;
+    bottom: 0px;
+    font-size: 40px;
+}

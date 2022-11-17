@@ -1,47 +1,45 @@
-import Nav from "../nav";
-import NavigationSidebar from "./navigation-sidebar";
-import WhoToFollowList from "./who-to-follow-list/index.js";
-import ExploreComponent from "./explore/index.js";
-import whoReducer from "./reducers/who-reducer";
-import tuitsReducer from "./tuits/tuits-reducer";
-import homeReducer from "./tuits/home/home-reducer";
-import { configureStore } from '@reduxjs/toolkit';
-import {Provider} from "react-redux";
-import {Route, Routes, useLocation} from "react-router";
-import HomeComponent from "./tuits/home";
 import React from "react";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootswatch/dist/cyborg/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.css';
+import NavigationSidebar from "./navigation-sidebar";
+import WhoToFollowList from "./who-to-follow-list"
+import ExploreComponent from "./explore"
+import whoReducer from "./reducers/who-reducer";
+import tuitsReducer from "./reducers/tuits-reducer";
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import HomeComponent from "./home";
+import {Routes, Route} from "react-router";
 
 const store = configureStore(
     {
-      reducer: {who: whoReducer, tuits: tuitsReducer, home: homeReducer}
-  });
+        reducer: {
+            who: whoReducer,
+            tuitsData: tuitsReducer
+        }
+    }
+);
 
 function Tuiter() {
-  const { pathname } = useLocation();
-  let activeTab;
-  
-  if (pathname.split("/").length === 3) {
-    activeTab = pathname.split("/")[2];
-
-  } else {
-    activeTab = 'explore';
-  }
-
-  return (
-      <Provider store={store}>
-        <Nav/>
-        <div className="row mt-2">
-          <NavigationSidebar active={activeTab}/>
-          <Routes>
-            <Route index path="/" element={<ExploreComponent/>}/>
-            <Route path="/home" element={<HomeComponent/>}/>
-            <Route path="/explore" element={<ExploreComponent/>}/>
-          </Routes>
-          <WhoToFollowList/>
-        </div>
-      </Provider>
-  );
+    return (
+        <Provider store={store}>
+            <div className="row mt-2 mb-2">
+                <div className="col-2 col-md-2 col-lg-1 col-xl-2">
+                    <NavigationSidebar active="" />
+                </div>
+                <div className="col-10 col-lg-7 col-xl-6">
+                    <Routes>
+                        <Route index element={<HomeComponent />} />
+                        <Route path="/explore/" element={<ExploreComponent />}/>
+                    </Routes>
+                </div>
+                <div className="d-none d-sm-none d-md-none d-lg-block col-lg-4 col-xl-4">
+                    <WhoToFollowList />
+                </div>
+            </div>
+        </Provider>
+    )
 }
+export default Tuiter;
 
-export default Tuiter
