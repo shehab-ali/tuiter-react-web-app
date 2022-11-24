@@ -5,9 +5,9 @@ import {useDispatch} from "react-redux";
 const WhatsHappening = () => {
     let [whatsHappening, setWhatsHappening] = useState('');
     const currentUser = {
-        "username": "Shehab",
-        "handle": "@shehab",
-        "image": "../images/musk.png",
+        "username": "NASA",
+        "handle": "@nasa",
+        "image": "nasa.png",
     };
     
     const templateTuit = {
@@ -33,7 +33,7 @@ const WhatsHappening = () => {
     return (
         <div className="row">
             <div className="col-auto">
-                <img src="/images/musk.png" width={60} alt=""/>
+                <img src="/images/nasa.png" width={60} alt=""/>
             </div>
             <div className="col-10">
                 <textarea value={whatsHappening} placeholder="What's happening?"

@@ -29,7 +29,7 @@ const TuitItem = ({
         <div className="list-group-item p-2" key={tuit._id}>
             <div className="row ms-0 me-0">
                 <div className="col-1 p-0">
-                    <img src={`/images/${tuit.image}`}
+                    <img src={`../images/${tuit.image}`}
                         className="rounded-circle ms-1 mt-1" width="40px" alt="" />
                 </div>
                 <div className="col-11">

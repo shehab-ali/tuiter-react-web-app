@@ -10,7 +10,6 @@ const TuitsList = () => {
 
     const dispatch = useDispatch();
 
-    //eslint-disable-next-line
     useEffect(() => { dispatch(findTuitsThunk()) });
 
     return (
@@ -24,5 +23,4 @@ const TuitsList = () => {
 }
 
 export default TuitsList;
-
 

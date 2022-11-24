@@ -16,4 +16,3 @@ const WhoToFollowList = () => {
 }
 
 export default WhoToFollowList;
-

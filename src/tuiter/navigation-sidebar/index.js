@@ -49,3 +49,10 @@ const NavigationSidebar = () => {
     )
 };
 export default NavigationSidebar;
+// line 45
+/*
+<span className="fa-stack" style="font-size: 8px">
+<i className="fas fa-circle fa-stack-2x"></i>
+<i className="fas fa-ellipsis-h fa-stack-1x fa-inverse"></i>
+</span>
+*/
